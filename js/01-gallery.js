@@ -38,16 +38,14 @@ const instance = basicLightbox.create(
   </div>`
 )
 instance.show()
-
-document.addEventListener('click',_.debounce(()=>{
-  instance.close()
-},
-500,
-{
-  leading : false
-}))
-
 }
-console.log(_.throttle)
+// document.addEventListener('click',_.debounce(()=>{
+//   instance.close()
+// },
+// 500,
+// {
+//   leading : true
+// }))
+
 
 
