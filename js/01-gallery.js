@@ -19,10 +19,10 @@ gallery.addEventListener("click", func);
 let attForModal;
 function func(evt) {
   evt.preventDefault();
-  
   galleryItems.forEach((el) => {
     if (el.preview === evt.target.attributes.src.value) {
       attForModal = el.original;
+      console.log(galleryItems.indexOf(el))
     }
   });
 console.log(attForModal);
