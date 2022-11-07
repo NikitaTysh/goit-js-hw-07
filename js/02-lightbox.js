@@ -17,19 +17,15 @@ function func(evt) {
   galleryItems.forEach((el) => {
     if (el.preview === evt.target.attributes.src.value) {
       attForModal = el.original;
-      console.log(gallerItems.indexOf(el))
+      console.log(gallerItems.indexOf(el));
     }
   });
-console.log(attForModal);
+  console.log(attForModal);
 }
-console.log(SimpleLightbox)
-let gal = new SimpleLightbox('.gallery__item a', {
-   overlayOpacity	: 0.5 ,
-   captionsData : 'alt',
-   captionDelay : 300
+console.log(SimpleLightbox);
+let gal = new SimpleLightbox(".gallery__item a", {
+  overlayOpacity: 0.5,
+  captionsData: "alt",
+  captionDelay: 300, 
 });
-gal.on('show.simplelightbox' )
-
-
-
-
+gal.on("show.simplelightbox");
