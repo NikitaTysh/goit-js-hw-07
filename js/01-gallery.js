@@ -16,36 +16,21 @@ const elToAdd = galleryItems
   .join("");
 gallery.insertAdjacentHTML("beforeend", elToAdd);
 gallery.addEventListener("click", func);
-let attForModal;
 function func(evt) {
   evt.preventDefault();
-  galleryItems.forEach((el) => {
-    if (el.preview === evt.target.attributes.src.value) {
-      attForModal = el.original;
-      console.log(galleryItems.indexOf(el))
-    }
-  });
-console.log(attForModal);
-const instance = basicLightbox.create(
-  `<div class="gallery__item">
+
+  const instance = basicLightbox.create(
+    `<div class="gallery__item">
     <a class="gallery__link" href="large-image.jpg">
       <img
         class="gallery__image"
           data-source="large-image.jpg"
-          src = "${attForModal}"
+          src = "${
+            galleryItems.find((el) => el.preview === evt.target.src).original
+          }"
       />
     </a>
   </div>`
-)
-instance.show()
+  );
+  instance.show();
 }
-// document.addEventListener('click',_.debounce(()=>{
-//   instance.close()
-// },
-// 500,
-// {
-//   leading : true
-// }))
-
-
-
