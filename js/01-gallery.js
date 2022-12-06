@@ -12,24 +12,18 @@ const elToAdd = galleryItems
       />
     </a>
   </div>`
-  )
-  .join("");
+  ).join("");
 gallery.insertAdjacentHTML("beforeend", elToAdd);
 gallery.addEventListener("click", func);
 function func(evt) {
   evt.preventDefault();
-
   const instance = basicLightbox.create(
     `<div class="gallery__item">
-    <a class="gallery__link" href="large-image.jpg">
       <img
         class="gallery__image"
           data-source="large-image.jpg"
-          src = "${
-            galleryItems.find((el) => el.preview === evt.target.src).original
-          }"
+          src = "${galleryItems.find((el) => el.preview === evt.target.src).original}"
       />
-    </a>
   </div>`
   );
   instance.show();
